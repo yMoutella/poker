@@ -47,8 +47,8 @@ export default function MinimalPage() {
       <header className="mb-12">
         <h1 className="text-5xl font-bold text-left">Teams</h1>
       </header>
-      <div className="flex flex-col items-end mb-1.5">
-        <div className="flex justify-end ">
+      <div className="flex justify-center mb-2">
+        <div className="w-full max-w-3xl flex justify-end">
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline">Create new team</Button>
@@ -77,9 +77,9 @@ export default function MinimalPage() {
           </Dialog>
         </div>
       </div>
-      <div className="">
-        <main className="flex flex-col items-center">
-          <div className="w-full max-lg space-y-1">
+      <div className="flex-col justify-center">
+        <main className="flex flex-col items-center ">
+          <div className="w-full max-w-3xl space-y-1">
             <Card className="rounded-2xl">
               <CardContent className="p-3 space-y-4">
                 <ScrollArea className="h-64 space-y-2">
@@ -130,26 +130,30 @@ export default function MinimalPage() {
             </Card>
           </div>
         </main>
-        <Card className="mt-3">
-          <CardHeader>
-            <CardTitle>I have a team link:</CardTitle>
-            <CardDescription>If you got a invitation link, insert below</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Input id="name" className="text-center" placeholder="Invitation link" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                </div>
-              </div>
-            </form>
-          </CardContent>
-          <CardFooter className="flex justify-center">
-            <Button className="w-1/6 h-10/12">Enter</Button>
-          </CardFooter>
-        </Card>
+        <main className="flex flex-col items-center ">
+          <div className="w-full max-w-3xl space-y-1">
+            <Card className="mt-3 ">
+              <CardHeader>
+                <CardTitle>I have a team link:</CardTitle>
+                <CardDescription>If you got a invitation link, insert below</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form>
+                  <div className="grid w-full items-center gap-4">
+                    <div className="flex flex-col space-y-1.5">
+                      <Input id="name" className="text-center" placeholder="Invitation link" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                    </div>
+                  </div>
+                </form>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <Button className="w-1/6 h-10/12">Enter</Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </main>
       </div>
     </div>
   );
