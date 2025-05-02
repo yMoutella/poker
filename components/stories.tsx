@@ -20,7 +20,7 @@ export default function StoryListCard() {
             </CardContent>
             <CardContent className="py-6 text-sidebar-accent-foreground font-mono text-sm justify-center overflow-scroll max-h-96 shadow-inner-2xs rounded-2xl">
                 {stories.map((story, i) => (
-                    <Card key={i} className="bg-card p-5 mb-2 border-border rounded-md cursor-pointer hover:bg-accent hover:text-accent-foreground">
+                    <Card key={i} className="bg-card p-5 mb-2 border-border rounded-md cursor-pointer hover:bg-accent hover:border-accent-foreground hover:text-accent-foreground">
                         <Label className="text-sm text-accent-foreground self-center">{story}</Label>
                     </Card>
                 ))}
