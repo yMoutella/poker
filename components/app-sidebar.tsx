@@ -45,7 +45,9 @@ export default function AppSidebar() {
                                         <SidebarContent>
                                             <Card>
                                                 <CardHeader>
-                                                    <CardTitle>{story.title}</CardTitle>
+                                                    <CardTitle>
+                                                        {story.title}
+                                                    </CardTitle>
                                                     <CardDescription>{story.description}</CardDescription>
                                                 </CardHeader>
                                                 <CardFooter className="flex justify-start">
@@ -55,6 +57,10 @@ export default function AppSidebar() {
                                         </SidebarContent>
                                     </SidebarMenuItem>
                                 ))}
+                                <Button variant="ghost" className="cursor-pointer hover:text-primary text-primary">Add issue <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                                </Button>
                             </SidebarMenu>
                         </SidebarGroupContent>
                     </SidebarGroup>
