@@ -50,7 +50,8 @@ export default function AppSidebar() {
                                                     </CardTitle>
                                                     <CardDescription>{story.description}</CardDescription>
                                                 </CardHeader>
-                                                <CardFooter className="flex justify-start">
+                                                <CardFooter className="flex justify-between">
+                                                    <Button variant="default" className="cursor-pointer">Vote now</Button>
                                                     <Button variant="link" className="cursor-pointer">Edit issue</Button>
                                                 </CardFooter>
                                             </Card>
