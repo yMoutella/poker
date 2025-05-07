@@ -29,9 +29,9 @@ export default async function Table({ params }: PageProps) {
 
     return (
 
-        <div className="min-h-screen pt-10 ">
+        <div className="min-h-screen">
             <Composite team={team}>
-                <div className="flex flex-row  min-h-max justify-around">
+                <div className="flex flex-row min-h-max justify-around">
                     <div className="w-full">
                         <TableComponent></TableComponent>
                     </div>
