@@ -20,9 +20,17 @@ import {
 
 export default function Composite({ team, children }: any) {
 
+    const SIDEBAR_WIDTH = "20rem"
+    const SIDEBAR_WIDTH_MOBILE = "18rem"
+
     return (
         <>
-            <SidebarProvider defaultOpen={false} >
+            <SidebarProvider defaultOpen={false} style={
+                {
+                    "--sidebar-width": SIDEBAR_WIDTH,
+                    "--sidebar-width-mobile": SIDEBAR_WIDTH_MOBILE
+                } as React.CSSProperties
+            }>
                 <SidebarInset>
                     <header className="flex h-16 shrink-0 items-center gap-2 px-4 ">
                         <div className="flex w-full items-center justify-center ">
@@ -49,12 +57,12 @@ export default function Composite({ team, children }: any) {
                                 <Button className="cursor-pointer">Invite players</Button>
                             </div>
                         </div>
-                        <SidebarTrigger className="-mr-1 ml-auto rotate-180" />
+                        <SidebarTrigger className="-mr-1 ml-auto rotate-180 text-accent-foreground" />
                     </header>
                     {children}
                 </SidebarInset>
                 <AppSidebar />
-            </SidebarProvider>
+            </SidebarProvider >
 
         </>
     )

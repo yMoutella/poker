@@ -5,9 +5,17 @@ import {
     SidebarGroupLabel, SidebarGroupContent,
     SidebarMenu, SidebarMenuButton, SidebarMenuItem
 } from "@/components/ui/sidebar"
-
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SidebarRail } from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button"
 import { Story } from "@/app/teams/[team]/interfaces";
 
 const stories: Story[] = [
@@ -24,20 +32,27 @@ const stories: Story[] = [
 ];
 
 export default function AppSidebar() {
-
     return (
         <>
             <Sidebar side="right" variant="floating">
                 <SidebarContent>
                     <SidebarGroup>
-                        <SidebarGroupLabel>Stories</SidebarGroupLabel>
+                        <SidebarGroupLabel className="text-center flex justify-center text-accent-foreground text-2xl mb-1.5">Issues</SidebarGroupLabel>
                         <SidebarGroupContent>
                             <SidebarMenu>
                                 {stories.map((story) => (
                                     <SidebarMenuItem key={story.title}>
-                                        <SidebarMenuButton asChild>
-                                            <span>{story.title}</span>
-                                        </SidebarMenuButton>
+                                        <SidebarContent>
+                                            <Card>
+                                                <CardHeader>
+                                                    <CardTitle>{story.title}</CardTitle>
+                                                    <CardDescription>{story.description}</CardDescription>
+                                                </CardHeader>
+                                                <CardFooter className="flex justify-start">
+                                                    <Button variant="link" className="cursor-pointer">Edit issue</Button>
+                                                </CardFooter>
+                                            </Card>
+                                        </SidebarContent>
                                     </SidebarMenuItem>
                                 ))}
                             </SidebarMenu>
