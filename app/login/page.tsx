@@ -4,8 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { signIn, auth } from "@/auth";
 import Form from "next/form"
+import { redirect } from "next/navigation";
 
 export default async function LoginPage() {
+
+  // const session = await auth()
+
+  // if (session) {
+  //   redirect("/teams");
+  // }
 
 
   return (
