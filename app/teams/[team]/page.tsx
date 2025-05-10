@@ -1,30 +1,19 @@
 
+
 import FibonacciCards from "@/components/fibonacci"
 import TableComponent from "@/components/table"
-import { PageProps, StoryState, Story } from "./interfaces"
-import { create } from "zustand";
+import { PageProps } from "./interface"
 import Composite from "@/components/composite";
-
-export const useSelStory = create<StoryState>((set) => ({
-    story: {
-        id: null,
-        title: null,
-        description: null
-    },
-    setStory: (story: Story) => set({ story }),
-    setDescription: (description: string) => set((state) => ({
-        story: {
-            ...state.story,
-            description: description
-        }
-    }
-    ))
-}));
-
-
+import { auth } from "@/auth"
+import { redirect } from "next/navigation";
 
 export default async function Table({ params }: PageProps) {
 
+    const session = await auth()
+
+    if (!session) {
+        redirect('/login')
+    }
     const { team } = await params
 
     return (
@@ -38,8 +27,6 @@ export default async function Table({ params }: PageProps) {
                 </div>
                 <FibonacciCards></FibonacciCards>
             </Composite>
-
-
         </div >
     )
 }

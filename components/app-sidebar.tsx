@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Story } from "@/app/teams/[team]/interfaces";
+import { Story } from "@/app/teams/[team]/interface";
 
 const stories: Story[] = [
     { id: "1", title: "Story-33", description: "Enhance the user authentication process for better UX." },

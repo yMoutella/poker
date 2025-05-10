@@ -1,10 +1,4 @@
 
-export interface PageProps {
-    params: {
-        team: string
-    }
-}
-
 export interface Story {
     id: string | null;
     title: string | null;
