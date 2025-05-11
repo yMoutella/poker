@@ -1,7 +1,12 @@
 import TeamList from "@/components/teamList";
 import { Label } from "@/components/ui/label";
-
 import AvatarComponent from "@/components/avatar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Teams",
+  description: "Teams page",
+};
 
 export default async function MinimalPage() {
 
