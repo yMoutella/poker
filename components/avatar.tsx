@@ -9,9 +9,13 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { signOut } from "@/auth"
+import { auth, signOut } from "@/auth"
 
-export default function AvatarComponent() {
+export default async function AvatarComponent() {
+
+    const session = await auth()
+
+
     return (
         <Popover>
             <PopoverTrigger asChild>
@@ -28,6 +32,10 @@ export default function AvatarComponent() {
                         redirectTo: "/login",
                     })
                 }}> Sign out</Button>
+                < Button className="w-full cursor-pointer" variant="outline" onClick={async () => {
+                    "use server"
+                    console.log(session)
+                }}> teste </Button>
             </PopoverContent>
         </Popover >
 
