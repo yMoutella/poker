@@ -81,45 +81,48 @@ export default function TeamList() {
                         <Card className="rounded-2xl">
                             <CardContent className="p-3 space-y-4">
                                 <ScrollArea className="h-64 space-y-2">
-                                    <TooltipProvider>
-                                        {items.map((item, index) => {
-                                            const isSelected = selected === item.name;
-                                            return (
-                                                <Tooltip key={index}>
-                                                    <TooltipTrigger asChild>
-                                                        <div
-                                                            onClick={() => setSelected(item.name)}
-                                                            className={`flex items-center justify-between p-4 border rounded-lg transition-all cursor-pointer hover:bg-accent ${isSelected ? "border-ring bg-muted" : ""
-                                                                } mb-2`}
-                                                        >
-                                                            <div className="flex items-center space-x-3">
-                                                                <Avatar>
-                                                                    <AvatarFallback>
-                                                                        {item.name.charAt(0)}
-                                                                    </AvatarFallback>
-                                                                </Avatar>
-                                                                <div>
-                                                                    <p className="font-medium leading-none">
-                                                                        {item.name}
-                                                                    </p>
-                                                                    <p className="text-sm text-muted-foreground">
-                                                                        Last active: {item.date}
-                                                                    </p>
+                                    {items.length > 0 ? (
+                                        <TooltipProvider>
+                                            {items.map((item, index) => {
+                                                const isSelected = selected === item.name;
+                                                return (
+                                                    <Tooltip key={index}>
+                                                        <TooltipTrigger asChild>
+                                                            <div
+                                                                onClick={() => setSelected(item.name)}
+                                                                className={`flex items-center justify-between p-4 border rounded-lg transition-all cursor-pointer hover:bg-accent ${isSelected ? "border-ring bg-muted" : ""
+                                                                    } mb-2`}
+                                                            >
+                                                                <div className="flex items-center space-x-3">
+                                                                    <Avatar>
+                                                                        <AvatarFallback>
+                                                                            {item.name.charAt(0)}
+                                                                        </AvatarFallback>
+                                                                    </Avatar>
+                                                                    <div>
+                                                                        <p className="font-medium leading-none">
+                                                                            {item.name}
+                                                                        </p>
+                                                                        <p className="text-sm text-muted-foreground">
+                                                                            Last active: {item.date}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="flex items-center space-x-2">
+                                                                    <Info className="w-4 h-4 text-muted-foreground" />
+
                                                                 </div>
                                                             </div>
-                                                            <div className="flex items-center space-x-2">
-                                                                <Info className="w-4 h-4 text-muted-foreground" />
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <p>Created: {item.date}</p>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                );
+                                            })}
+                                        </TooltipProvider>
+                                    ) : (<p className="text-center text-muted-foreground">No teams available</p>)}
 
-                                                            </div>
-                                                        </div>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent>
-                                                        <p>Created: {item.date}</p>
-                                                    </TooltipContent>
-                                                </Tooltip>
-                                            );
-                                        })}
-                                    </TooltipProvider>
                                 </ScrollArea>
                                 {selected && (
                                     <Button className="flex align-middle justify-center self-center">Open: {selected}</Button>

@@ -14,6 +14,11 @@ export default async function middleware(request: NextRequest) {
         return NextResponse.redirect(login)
     }
 
+    if (session && request.nextUrl.pathname === "/login") {
+        const teams = new URL('/teams', request.url)
+        return NextResponse.redirect(teams)
+    }
+
     return NextResponse.next()
 
 }

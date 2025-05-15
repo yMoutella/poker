@@ -3,7 +3,6 @@ import { DynamoDB, DynamoDBClientConfig } from "@aws-sdk/client-dynamodb"
 import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb"
 import { DynamoDBAdapter } from "@auth/dynamodb-adapter"
 import Resend from "next-auth/providers/resend"
-import { sendVerificationRequest } from "@/lib/authSendRequest"
 
 const config: DynamoDBClientConfig = {
     credentials: {
